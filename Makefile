@@ -6,7 +6,7 @@
 #    By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 16:49:02 by rsaueia-          #+#    #+#              #
-#    Updated: 2024/04/02 15:50:14 by rsaueia-         ###   ########.fr        #
+#    Updated: 2024/04/02 19:24:31 by rsaueia-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,23 +30,18 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) $(MLX) -o $(NAME)
-	@echo "$(GREEN)$(NAME) compiled :)$(END_COLOR)"
+	$(CC) $(CFLAGS) $(OBJ) $(MLX) -o $(NAME)
 
 %.o : %.c $(HEADER)
-	@$(CC) $(CFLAGS) -c $<
-	@echo "$(BLUE)Compiling $(notdir $<)$(END_COLOR)"
+	$(CC) $(CFLAGS) -c $<
 
 clean:
-	@rm -rf $(OBJ)
-	@echo "$(YELLOW)$(NAME) object & dependency files cleaned.$(END_COLOR)"
+	rm -rf $(OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(YELLOW)$(NAME) executable file cleaned.$(END_COLOR)"
+	rm -f $(NAME)
 
 re: fclean all
-	@echo "$(GREEN)Cleaned all and rebuilt $(NAME)!$(END_COLOR)"
 
 # **************************************************************************** #
 # PHONY

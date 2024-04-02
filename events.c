@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 16:19:11 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/03/28 19:40:28 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:38:57 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ int	key_handler(int keysym, t_fractal *fractal)
 	if (keysym == XK_Escape)
 		close_handler(fractal);
 	if (keysym == XK_Left)
-		fractal->shift_x += (0.5 * fractal->zoom);
-	else if (keysym == XK_Right)
 		fractal->shift_x -= (0.5 * fractal->zoom);
+	else if (keysym == XK_Right)
+		fractal->shift_x += (0.5 * fractal->zoom);
 	else if (keysym == XK_Up)
-		fractal->shift_y -= (0.5 * fractal->zoom);
-	else if (keysym == XK_Down)
 		fractal->shift_y += (0.5 * fractal->zoom);
+	else if (keysym == XK_Down)
+		fractal->shift_y -= (0.5 * fractal->zoom);
 	else if (keysym == XK_plus)
 		fractal->iterations_definition += 10;
 	else if (keysym == XK_minus)
@@ -54,6 +54,8 @@ int	key_handler(int keysym, t_fractal *fractal)
 
 int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
+	(void)x;
+	(void)y;
 	if (button == Button5)
 	{
 		fractal->zoom *= 0.95;

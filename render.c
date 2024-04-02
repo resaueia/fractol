@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:18:35 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/03/28 16:39:13 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:43:19 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		}
 		++i;
 	}
-	my_pixel_put(x, y, &fractal->img, WHITE);
+	my_pixel_put(x, y, &fractal->img, PSYCHEDELIC_PURPLE);
 }
 
 void	fractal_render(t_fractal *fractal)

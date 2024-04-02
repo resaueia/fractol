@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:57:13 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:57:17 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/02 19:45:54 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	malloc_error(void)
 static void	data_init(t_fractal *fractal)
 {
 	fractal->escape_value = 4;
-	fractal->iterations_definition = 100;
+	fractal->iterations_definition = 62;
 	fractal->shift_x = 0.0;
 	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
