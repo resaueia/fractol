@@ -6,12 +6,11 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:33:06 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/03/28 20:07:33 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:51:49 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {
@@ -29,12 +28,12 @@ int	ft_strncmp(char *s1, char *s2, int n)
 void	putstr_fd(char *s, int fd)
 {
 	int	index;
-	
+
 	index = 0;
 	if (s == NULL || fd < 0)
-		return ;
+		return (0);
 	while (s[index])
-		write(fd, &s[index++}, 1);
+		write(fd, &s[index++], 1);
 }
 
 double	atodbl(char *s)

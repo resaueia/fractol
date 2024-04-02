@@ -6,7 +6,7 @@
 #    By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 16:49:02 by rsaueia-          #+#    #+#              #
-#    Updated: 2024/04/01 16:49:06 by rsaueia-         ###   ########.fr        #
+#    Updated: 2024/04/02 15:50:14 by rsaueia-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,9 @@ MLX = -Lminilibx-linux -lmlx_Linux -lX11 -lXext
 CFLAGS	= -Wall -Wextra -Werror
 
 # **************************************************************************** #
-# COLORS
-
-GREEN		= \033[0;92m
-YELLOW		= \033[0;93m
-BLUE		= \033[0;94m
-END_COLOR	= \033[0;39m
-
-# **************************************************************************** #
 # SOURCES
 
-SRC = fractol.c fractol_utils.c fractol_env_set.c fractol_sets.c fractol_mapping.c ft_close.c ft_args.c
+SRC = fractol.c events.c fractol_init.c math_aux.c render.c string_aux.c 
 OBJ = $(SRC:.c=.o)
 
 # **************************************************************************** #
