@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:33:06 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/04/02 15:51:49 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:35:34 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	putstr_fd(char *s, int fd)
 
 	index = 0;
 	if (s == NULL || fd < 0)
-		return (0);
+		return ;
 	while (s[index])
 		write(fd, &s[index++], 1);
 }
