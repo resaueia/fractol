@@ -6,17 +6,12 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 16:19:11 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/04/02 19:38:57 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:15:27 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-/*
- * ESC or i press the x🔴 in the window
- * there won't be leaks!
- * int (*f)(void *param)
-*/
 int	close_handler(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx_connection, fractal->img.img_ptr);
@@ -26,10 +21,6 @@ int	close_handler(t_fractal *fractal)
 	exit(EXIT_SUCCESS);
 }
 
-/*
- * Keypress prototype
- * int (*f)(int keycode, void *param)
-*/
 int	key_handler(int keysym, t_fractal *fractal)
 {
 	if (keysym == XK_Escape)
@@ -42,7 +33,7 @@ int	key_handler(int keysym, t_fractal *fractal)
 		fractal->shift_y += (0.5 * fractal->zoom);
 	else if (keysym == XK_Down)
 		fractal->shift_y -= (0.5 * fractal->zoom);
-	else if (keysym == XK_plus)
+	else if (keysym == 61)
 		fractal->iterations_definition += 10;
 	else if (keysym == XK_minus)
 		fractal->iterations_definition -= 10;
@@ -56,11 +47,11 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 {
 	(void)x;
 	(void)y;
-	if (button == Button5)
+	if (button == Button4)
 	{
 		fractal->zoom *= 0.95;
 	}
-	else if (button == Button4)
+	else if (button == Button5)
 	{
 		fractal->zoom *= 1.05;
 	}
@@ -69,9 +60,7 @@ int	mouse_handler(int button, int x, int y, t_fractal *fractal)
 }
 
 /*
- * TRACK the mouse
- * to change julia dynamically
- * int (*f)(int x, int y, void *param)
+ * TRACK the mouse to change the julia set dynamically
 */
 int	julia_track(int x, int y, t_fractal *fractal)
 {

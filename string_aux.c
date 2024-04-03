@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:33:06 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/04/02 18:35:34 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/03 18:04:57 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,21 @@ double	atodbl(char *s)
 
 	integer_part = 0;
 	fractional_part = 0;
-	sign = +1;
+	sign = 1;
 	power = 1;
 	while ((*s >= 9 && *s <= 13) || 32 == *s)
-		++s;
+		s++;
 	while (*s == '+' || *s == '-')
-		if (*s == '-')
+		if (*s++ == '-')
 			sign = -sign;
 	while (*s != '.' && *s)
 		integer_part = (integer_part * 10) + (*s++ - 48);
 	if ('.' == *s)
-		++s;
+		s++;
 	while (*s)
 	{
 		power /= 10;
 		fractional_part = fractional_part + (*s++ - 48) * power;
 	}
-	return ((integer_part + fractional_part) * sign);
+	return (sign * (integer_part + fractional_part));
 }

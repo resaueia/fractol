@@ -6,7 +6,7 @@
 /*   By: rsaueia- <rsaueia-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 17:18:35 by rsaueia-          #+#    #+#             */
-/*   Updated: 2024/04/02 19:43:19 by rsaueia-         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:31:49 by rsaueia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ static void	mandel_or_julia(t_complex *z, t_complex *c, t_fractal *fractal)
 
 /*	
  *		MANDELBROT
- *		z = z^2 + c
+ *		z = z² + c
  *		z initially is (0, 0)
  *		c is the actual point
  *
- *		z = z^2 + c -> z1 = c + c
+ *		z = z² + c -> z1 = c + c
  *
  *		JULIA
  *		./fractol julia <real> <i> 
@@ -69,7 +69,7 @@ static void	handle_pixel(int x, int y, t_fractal *fractal)
 		}
 		++i;
 	}
-	my_pixel_put(x, y, &fractal->img, PSYCHEDELIC_PURPLE);
+	my_pixel_put(x, y, &fractal->img, LIME_SHOCK);
 }
 
 void	fractal_render(t_fractal *fractal)
